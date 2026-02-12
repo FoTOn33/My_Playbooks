@@ -8,5 +8,5 @@
       cisco.ios.ios_vlans:
         config:
           - vlan_id: "{{ vlan_id | int }}"
-            name: "VLAN_{{ vlan_id }}"
+            name: "{{ vlan_name }}"
         state: merged
