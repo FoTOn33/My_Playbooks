@@ -1,0 +1,12 @@
+---
+- name: "Lab: Create VLAN on Switch"
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: "Create VLAN {{ vlan_id }}"
+      cisco.ios.ios_vlans:
+        config:
+          - vlan_id: "{{ vlan_id | int }}"
+            name: "VLAN_{{ vlan_id }}"
+        state: merged
